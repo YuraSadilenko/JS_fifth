@@ -1,3 +1,4 @@
+'use strict'
 function Car(mark, color, year, mileage, amountOfFuel, isEngineStart, isStartMove, isStopMove) {
   this.mark = mark;
   this.color = color;
@@ -13,7 +14,7 @@ function Car(mark, color, year, mileage, amountOfFuel, isEngineStart, isStartMov
   this.startMove = function() {
     if (this.isEngineStart) {
       this.isStartMove = true;
-      console.log('Машина марки ' + car.mark + ',' + car.color + ' цвета поехала!');
+      console.log('Машина марки ' + this.mark + ',' + this.color + ' цвета поехала!');
     } else {
       console.log('Включите вначале зажигание');
     }

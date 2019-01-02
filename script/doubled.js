@@ -1,4 +1,4 @@
-
+'use strict'
 /*First version*/
 console.log(getDoubled(15));
 console.log(getDoubledTrippled(10));

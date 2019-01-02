@@ -1,3 +1,4 @@
+'use strict'
 var object = {
   name: 'Vasya Pryanychkyn',
   getName: function() {
