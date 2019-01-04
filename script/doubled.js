@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 /*First version*/
 console.log(getDoubled(15));
 console.log(getDoubledTrippled(10));
@@ -26,7 +26,7 @@ var number = {
   getDoubleTripple: function() {
     return this.num * 2 * 3;
   }
-}
+};
 
 console.log(number.getDouble());
 console.log(number.getDoubleTripple());

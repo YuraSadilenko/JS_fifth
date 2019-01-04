@@ -1,33 +1,48 @@
+'use strict';
 (function () {
   var carouselArr = [
     {image: 'car.jpg', alt: 'Car'}, 
     {image: 'apple.jpg', alt: 'Apple'}
   ];
+  var carouselIndex = 0;
   var newSlider = [
     {image: 'peach.jpg', alt: 'peach'}, 
     {image: 'pineapple.jpg', alt: 'pineapple'},
     {image: 'tomato.jpg', alt: 'tomato'}
   ];
-  var carouselIndex = 0;
 
   console.log(nextSlide());
+  console.log(nextSlide());
+  console.log(nextSlide());
+  console.log(nextSlide());
+  console.log(nextSlide());
+  console.log(nextSlide());
+
   console.log(prevSlide());
-  console.log(switchSlide(1));
-  console.log(addItems(newSlider, 2));
-  console.log(removeItem(0));
+  console.log(prevSlide());
+  console.log(prevSlide());
+  console.log(prevSlide());
+  console.log(prevSlide());
+
+  console.log(switchSlide(2));
+  console.log(addItems(newSlider, 0));
+  console.log(removeItem(1));
   console.log(getSliderInfo(0));
   console.log(getSliderInfo(1));
   console.log(getSliderInfo(2));
   console.log(getSliderInfo(3));
+  console.log(removeItem(0));
+  getSliderInfo(carouselIndex);
+
 
   function nextSlide() {
     if (carouselIndex === (carouselArr.length - 1)) {
-      currentSlide = 0;
-      return carouselArr[currentSlide];
+      carouselIndex = 0;
+      return carouselArr[carouselIndex];
     }
     ++carouselIndex;
     return carouselArr[carouselIndex];
-  };
+  }
 
   function prevSlide() {
     if(carouselIndex > 0) {
@@ -36,7 +51,7 @@
     }
     carouselIndex = carouselArr.length - 1;
     return carouselArr[carouselIndex];
-  };
+  }
 
   function switchSlide(n) {
     if(n < carouselArr.length) {
@@ -45,7 +60,7 @@
     }
     carouselIndex = carouselArr.length - 1;
     return carouselArr[carouselIndex];
-  };
+  }
 
   function addItems(obj, index) {
     var arrIndex = index;
@@ -65,7 +80,7 @@
       }
     }
     return carouselArr;
-  };
+  }
 
   function removeItem(index) {
     if (index <= carouselIndex) {
@@ -77,13 +92,14 @@
       console.log('Error');
     }
     return carouselArr;
-  };
-
+  }
+    
   function getSliderInfo(a) {
     if (a < carouselArr.length) {
       console.log(carouselArr[a].alt);
     } else {
       console.log('Error');
     }
-  };
+  }
+
 })();

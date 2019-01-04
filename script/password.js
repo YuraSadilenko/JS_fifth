@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 function ask(question, answer, ok, fail) {
 	var result = prompt(question, '');
 	if (result === answer) {
