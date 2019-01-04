@@ -10,6 +10,8 @@
     {image: 'pineapple.jpg', alt: 'pineapple'},
     {image: 'tomato.jpg', alt: 'tomato'}
   ];
+  console.log(removeItem(0));
+  getSliderInfo(carouselIndex);
 
   console.log(nextSlide());
   console.log(nextSlide());
@@ -31,9 +33,14 @@
   console.log(getSliderInfo(1));
   console.log(getSliderInfo(2));
   console.log(getSliderInfo(3));
-  console.log(removeItem(0));
-  getSliderInfo(carouselIndex);
 
+  function getSliderInfo(a) {
+    if (a < carouselArr.length) {
+      console.log(carouselArr[a]);
+    } else {
+      console.log('Error');
+    }
+  }
 
   function nextSlide() {
     if (carouselIndex === (carouselArr.length - 1)) {
@@ -72,7 +79,7 @@
     } else {
       if (index <= carouselIndex) {
         carouselArr.splice(arrIndex, 0, obj);
-        ++carouselIndex;
+        carouselIndex++;
       } else if (index < array.length) {
         carouselArr.splice(arrIndex, 0, obj);
       } else {
@@ -85,7 +92,7 @@
   function removeItem(index) {
     if (index <= carouselIndex) {
       carouselArr.splice(index, 1);
-      --carouselIndex;
+      carouselIndex--;
     } else if (index < carouselArr.length) {
       carouselArr.splice(index, 1);
     } else {
@@ -93,13 +100,4 @@
     }
     return carouselArr;
   }
-    
-  function getSliderInfo(a) {
-    if (a < carouselArr.length) {
-      console.log(carouselArr[a].alt);
-    } else {
-      console.log('Error');
-    }
-  }
-
 })();

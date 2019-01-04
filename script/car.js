@@ -10,8 +10,8 @@ function Car(mark, color, year, mileage, amountOfFuel, isEngineStart, isStartMov
   this.isStopMove = isStopMove;
   this.startEngine = function() {
     this.isEngineStart = true;
-  }
-  
+  };
+
   this.startMove = function() {
     if (this.isEngineStart) {
       this.isStartMove = true;
@@ -22,7 +22,7 @@ function Car(mark, color, year, mileage, amountOfFuel, isEngineStart, isStartMov
     if (this.amountOfFuel < 10) {
       console.log('Вам нужно заправить свой автомобиль!');
     }
-  }
+  };
 
   this.stopMoving = function() {
     if (this.isEngineStart) {
@@ -31,7 +31,7 @@ function Car(mark, color, year, mileage, amountOfFuel, isEngineStart, isStartMov
     } else {
       console.log('Зажигание и так выключено');
     }
-  }
+  };
 
   this.refuelling = function() {
     if (this.amountOfFuel < 10) {
@@ -40,13 +40,13 @@ function Car(mark, color, year, mileage, amountOfFuel, isEngineStart, isStartMov
     } else {
       console.log('Вам не нужна заправка');
     }
-  }
+  };
 
   this.displayInfo = function() {
     console.log('Машина марки: ' + this.mark + '\r\nцвет: ' 
     + this.color + '\r\nавтомобиль: ' + this.year + ' года выпуска\r\nпробег: '
     + this.mileage + ' км\r\nсейчас бензина в баке: ' + this.amountOfFuel + ' литр(ов);');
-  }
+  };
 }
 
 var mustang = new Car('mustang', 'красный', '2018', 30000, 50);
